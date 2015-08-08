@@ -39,14 +39,21 @@ class ChatAgent(object):
     def _connect(self):
         'Private method to connect to XMPP server'
         #print self.__whoami + ': connecting...'
-        if self.__client.connect() == "":
-            raise ConnectionException()
+        try:
+            self.__client.connect()
+        except Exception, e:
+            print 'ERROR: Can\'t connect to chat server:', e
+            sys.exit()
+            #raise ConnectionException()
 
     def _auth(self,pwd):
         'Private method to authenticate to XMPP server'
         #print self.__whoami +': authenticating...'
-        if self.__client.auth(self.__my_jid.getNode(),pwd) == None:
-            raise AuthException()
+        try:
+            self.__client.auth(self.__my_jid.getNode(),pwd):
+        except Exception, e:
+            print 'ERROR: Authentication failed:', e
+            #raise AuthException()
 
     def add_callback(self,func):
         'Add a callback function' # Do we need this?
