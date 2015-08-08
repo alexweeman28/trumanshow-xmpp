@@ -30,11 +30,12 @@ for agent in agentList:
     except Exception as e:
         print('\nError: unable to start thread for ' + agent, e)
     except KeyboardInterrupt:
-        clean_up(agents)
+        #clean_up(agents)
         sys.exit()
                     
 while True:
     try:
         time.sleep(30)
     except KeyboardInterrupt:
-        clean_up(agents)
+        #clean_up(agents)
+        sys.exit()
