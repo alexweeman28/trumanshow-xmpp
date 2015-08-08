@@ -46,7 +46,11 @@ class ChatAgent(sleekxmpp.ClientXMPP):
             print(self.__whoami, 'unable to connect...')
             sys.exit(1)
         while True:
-            self._sched_msg()
+            try:
+                self._sched_msg()
+            except KeyboardInterrupt:
+                self.disconnect()
+                sys.exit()
                         
     def _start(self, event):
         self.send_presence()
