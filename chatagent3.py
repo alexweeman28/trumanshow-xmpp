@@ -29,15 +29,7 @@ class ChatAgent(sleekxmpp.ClientXMPP):
         self.register_plugin('xep_0004')
         self.register_plugin('xep_0060')
         self.register_plugin('xep_0199')
-        try:
-            self._run()
-        except Exception as e:
-            print('******************* KABOOM!!!! *******************')
-            print(self.__whoami + ' JUST LEFT THE BUILDING!!!!')
-            print('Here\'s the issue:', e)
-            # Add this crashed agent to the class's list so
-            # that a new thread can be spawned for it
-            #ChatAgent.crashed.append(self.__whoami)
+        self._run()
 
     def _run(self):
         if self.connect():
@@ -50,6 +42,7 @@ class ChatAgent(sleekxmpp.ClientXMPP):
                 self._sched_msg()
             except KeyboardInterrupt:
                 self.disconnect()
+                print(strftime("%H:%M:%S") + ' This is ' + self.__whoami + ' signing off!')
                 sys.exit()
                         
     def _start(self, event):
