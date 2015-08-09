@@ -25,5 +25,8 @@ while True:
     try:
         time.sleep(30)
     except KeyboardInterrupt:
+        # We only need to take care of ourselves here. The child
+        # processes will all see the signal and include code to
+        # gracefully exit on their own. We're all grownups here.
         print('Bye!')
         sys.exit()

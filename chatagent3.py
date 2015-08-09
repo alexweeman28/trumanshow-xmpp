@@ -69,6 +69,9 @@ class ChatAgent(sleekxmpp.ClientXMPP):
             try:
                 self._sched_msg()
             except KeyboardInterrupt:
+                # Chat agents will receive the Ctrl-c signal, even
+                # when running as child processes. So, they can
+                # exit gracefully on their won.
                 self.disconnect()
                 print(strftime("%H:%M:%S") + ' This is ' + self.__whoami + ' signing off!')
                 sys.exit()
