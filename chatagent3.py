@@ -77,7 +77,7 @@ class ChatAgent(sleekxmpp.ClientXMPP):
         self.send_presence()
         self.get_roster()
         
-    def _handle_probe(self, presence):
+    def _handle_probe(self, event):
         self.sendPresence(pto = event["from"])
     
     def _handle_subscribe(self, presence):
