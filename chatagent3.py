@@ -6,7 +6,7 @@
 #                                                              #
 # In addition, it must be noted that the version of            #
 # sleekxmpp included in Ubuntu 14.04 (python3-sleekxmpp)       #
-# is not sufficient (as of 8/2015, because it is not kept      #
+# is not sufficient (as of 8/2015), because it is not kept      #
 # up to date with important changes.                           #
 #                                                              #
 # Follow these steps to install the latest sleekxmpp:          #
