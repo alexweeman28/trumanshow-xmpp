@@ -14,7 +14,5 @@ The included files provide for (semi-)autonomous chat bots for BetaPort.
 
 * Python 2 version:
  * chatagent_home.py -- The Python 2 ChatAgent class. Works well with Prosody servers. Note the requirements included in comments at the top of the file.
-
  * testagent_home.py -- The driver script for chatagent_home.py.
-
  * prosody.cfg.lua -- Example prosody config file.
