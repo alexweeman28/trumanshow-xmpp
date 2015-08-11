@@ -8,7 +8,7 @@ This directory provides a collection of scripts and other files to support accou
 
 * xmpp_accounts.p -- A sample Python Pickle file produced by the xmpp_accounts.py script, using names from the names.txt file above.
 
-* xmpp_rosters.py -- A sample Python Pickle file produced by the build_rosters.py script, using accounts created by the script xmpp_accounts.py.
+* xmpp_rosters.p -- A sample Python Pickle file produced by the build_rosters.py script, using accounts created by the script xmpp_accounts.py.
 
 * prosodyctl.py -- This script reads in the accounts dictionary from the Python Pickle file created with xmpp_accounts.py. The script then writes (to stdout) the prosodyctl statements to register the new accounts on their respective XMPP servers. The statements are written in distinct blocks, grouped by server name.
 
