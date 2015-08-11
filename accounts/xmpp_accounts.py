@@ -1,14 +1,24 @@
+################################################
+# This script creates a Python dictionary      #
+# containing the specified (below) number      #
+# of JIDs and randomly-generated passwords,    #
+# with user names randomly selected from a     #
+# file of names provided in a file 'names.txt' #
+# in the current directory.                    #
+################################################
 import string
 import random
 import pickle
-# Identify some servers and the number of accounts
-# per server
-password_length = 8
-num_accounts = [50, 50]
+
+# What are the names of the XMPP servers?
 servers = ['davis.26maidenlane.net','reno.26maidenlane.net']
+# How many accounts per server (left-to-right)?
+num_accounts = [50, 50]
+# How long should account passwords be?
+password_length = 8
 
 def make_passwords(n, x):
-    'Create n random passwords each containing x characters'
+    'Create n random passwords, each containing x characters'
     letters = [x for x in string.ascii_letters]
     digits = [x for x in string.digits]
     chars = letters + digits
@@ -18,7 +28,7 @@ def make_passwords(n, x):
     return passwords
 
 def get_names(n):
-    'Selects n random names from names.txt in current directory'
+    'Selects n random names from file "names.txt" in current directory'
     all_names = []
     names = set()
     try:
@@ -28,22 +38,22 @@ def get_names(n):
             all_names.append(name.lower())
         f.close()
     except:
-        print("ERROR: Can't open and or read names.txt")
-        return
+        print("ERROR: Can't open and or read file ./names.txt")
+        return []
     while len(names) < n:
         names.add(random.choice(all_names))
-  
     return list(names)
 
 def make_accounts(names, passwords, num_accounts, servers):
     'Create a dictionary of accounts:passwords from inputs'
+    # First, do some sanity checks on the inputs
     if len(names) != len(passwords):
         print("Error: The number of passwords doesn't match the nunber of names.")
         return
     if len(names) != sum(num_accounts):
-        print("Error: The number of names doesn't match the number of accounts.")
+        print("Error: Count of names doesn't match count of accounts.")
         return
-
+    # Build the account dictionary
     accounts = {}
     j = 0
     offset = 0
@@ -55,9 +65,11 @@ def make_accounts(names, passwords, num_accounts, servers):
     return accounts
 
 if __name__=='__main__':
-    passwords = make_passwords(sum(num_accounts), password_length)
     names =  get_names(sum(num_accounts))
-    accts = make_accounts(names, passwords, num_accounts, servers)
-    print('Made a total of', len(accts), 'accounts')
-    print('Dictonary of accounts saved to "./xmpp_accounts.p"')
-    pickle.dump( accts, open( "xmpp_accounts.p", "wb" ) )
+    if len(names):
+        passwords = make_passwords(sum(num_accounts), password_length)
+        accts = make_accounts(names, passwords, num_accounts, servers)
+        pickle.dump( accts, open( "xmpp_accounts.p", "wb" ) )
+        print('Created a total of', len(accts), 'accounts')
+        print('Dictionary of accounts saved to file "./xmpp_accounts.p"')
+
