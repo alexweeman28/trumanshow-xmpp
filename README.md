@@ -2,7 +2,11 @@
 
 The included files provide for (semi-)autonomous chat bots for BetaPort.
 
-* buddylist.py -- This is a script to create rosters (buddy lists) for the chat bots. The current version works only with the Python 2 xmpp library. **Needs updating for Python 3.**
+TO DO: Update testagent3.py to use the dictionary of accounts saved in the xmpp_accounts.p file in the local directory, rather than a hardcoded version in the script itself.
+
+* accounts/ -- This directory provides a collection of scripts and other files to support account creation of XMPP ChatBot agents for the Python 3 version.
+
+* buddylist.py -- This is a script to create rosters (buddy lists) for the Python 2 chat bots. See the accounts directory for the Python 3 version.
 
 * Python 3 version:
  * chatagent3.py -- The Python 3 ChatAgent class. Works well with Prosody servers. Note the requirements included in comments at the top of the file.
