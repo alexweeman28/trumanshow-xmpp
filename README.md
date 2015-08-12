@@ -2,7 +2,7 @@
 
 The included files provide for (semi-)autonomous chat bots for BetaPort.
 
-TO DO: Update testagent3.py to use the dictionary of accounts saved in the xmpp_accounts.p file in the local directory, rather than a hardcoded version in the script itself.
+TO DO: Update testagent3.py to use the dictionary of accounts saved in the xmpp_accounts.p file in the ./accounts directory, rather than a hardcoded version in the script itself.
 
 * accounts/ -- This directory provides a collection of scripts and other files to support account creation of XMPP ChatBot agents for the Python 3 version.
 
