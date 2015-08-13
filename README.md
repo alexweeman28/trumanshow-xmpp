@@ -2,10 +2,6 @@
 
 The included files provide for (semi-)autonomous chat bots for BetaPort.
 
-DONE: Update testagent3.py to use the dictionary of accounts saved in the xmpp_accounts.p file in the ./accounts directory, rather than a hardcoded version in the script itself.
-
-TODO: More testing of testagent3.py. How many agents is too many, such that the threading limit of a single Python 3 environment is exceeeded?
-
 * accounts/ -- This directory provides a collection of scripts and other files to support account creation of XMPP ChatBot agents for the Python 3 version.
 
 * buddylist.py -- This is a script to create rosters (buddy lists) for the Python 2 chat bots. See the accounts directory for the Python 3 version.
