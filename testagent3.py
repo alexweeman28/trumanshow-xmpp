@@ -1,5 +1,4 @@
 #!/usr/bin/python
-
 import multiprocessing as mp
 import time, sys, pickle
 from chatagent3 import ChatAgent
@@ -10,7 +9,11 @@ from time import strftime
 # script then stores a Python dictionary of agent JIDs
 # and their associated passwords in a Python pickle
 # file: accounts/xmpp_accounts.p.
-agentList = pickle.load(open('accounts/xmpp_accounts.p', 'rb'))
+try:
+    agentList = pickle.load(open('accounts/xmpp_accounts.p', 'rb'))
+except:
+    print('Error: Can\'t open/read accounts/xmpp_accounts.p')
+    sys.exit(1)
 
 # This delay is required to keep the newly-hatching agents
 # from overwhelming the ClientXMPP class/XMPP server with
