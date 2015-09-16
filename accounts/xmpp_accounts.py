@@ -5,6 +5,8 @@
 # with user names randomly selected from a     #
 # file of names provided in a file 'names.txt' #
 # in the current directory.                    #
+# The dictionary is then written to a Pickle   #
+# file in the present working directory.       #
 ################################################
 import string
 import random
