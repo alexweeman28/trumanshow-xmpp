@@ -4,7 +4,7 @@ This directory provides a collection of scripts and other files to support accou
 
 * names.txt -- A collection of 5163 popular first names (from 1999?) downloaded from the Census Bureau (all in uppercase). It's heavily weighted toward female names, for some reason.
 
-* xmpp_accounts.py -- This script reads in a list of names from a file names.txt in the current directory and produces a Python dictionary containing the specified number of XMPP account IDs, based on the names of provided servers, randomly-selected first names from names.txt and randomly-generated passwords. The newly created dictionary of account information is saved to a file named xmpp_accounts.p in the current directory, in Python Pickle format. This file can later be used with the script prosodyctl.py to create the accounts on teh XMPP servers, and with the script build_rosters.py to create a dictionary of contact rosters for the XMPP accounts.
+* xmpp_accounts.py -- This script reads in a list of names from a file names.txt in the current directory and produces a Python dictionary containing the specified number of XMPP account IDs, based on the names of provided servers, randomly-selected first names from names.txt and randomly-generated passwords. The newly created dictionary of account information is saved to a file named xmpp_accounts.p in the current directory, in Python Pickle format. This file can later be used with the script prosodyctl.py to create the accounts on the XMPP servers, and with the script build_rosters.py to create a dictionary of contact rosters for the XMPP accounts.
 
 * xmpp_accounts.p -- A sample Python Pickle file produced by the xmpp_accounts.py script, using names from the names.txt file above.
 
