@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python3
 import multiprocessing as mp
 import time, sys, pickle
 from chatagent3 import ChatAgent
@@ -30,9 +30,9 @@ for agent in agentList:
         print('success!')
         time.sleep(slow_start)
     except Exception as e:
-        print('\nError: unable to start thread for ' + agent, e)
+        print('\nError: unable to start thread for {}: {}'.format(agent, repr(e)))
     except KeyboardInterrupt:
-        sys.exit()
+        sys.exit(0)
                     
 while True:
     try:
@@ -40,8 +40,8 @@ while True:
     # Exit the script by pressing Ctrl-c
     except KeyboardInterrupt:
         # This driver script only needs to take care of itself
-        #  here. The child processes will all see the signal 
-        # and ChatBot class  includes code to allow agents to 
+        # here. The child processes will all see the signal and
+        # the ChatBot class includes code to allow agents to
         # gracefully exit on their own. We're all adults here.
         print('Bye!')
         sys.exit()

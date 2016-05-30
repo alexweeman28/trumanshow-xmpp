@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 ################################################################
 # This python3 script requires Ubuntu 14.04 or later.          #
 # Earlier versions do not appear to offer the required,        #
@@ -6,7 +6,7 @@
 #                                                              #
 # In addition, it must be noted that the version of            #
 # sleekxmpp included in Ubuntu 14.04 (python3-sleekxmpp)       #
-# is not sufficient (as of 8/2015), because it is not kept      #
+# is not sufficient (as of 8/2015), because it is not kept     #
 # up to date with important changes.                           #
 #                                                              #
 # Follow these steps to install the latest sleekxmpp:          #
@@ -16,7 +16,9 @@
 #                                         # dependencies       #
 #    3) sudo pip3 install sleekxmpp                            #
 #                                                              #
-# Other Ubuntu dependencies: fortune-mod,                      #
+# Other Ubuntu dependencies: fortune-mod...                    #
+#                                                              #
+#    sudo apt-get install fortune-mod                          #
 #                                                              #
 ################################################################
 
