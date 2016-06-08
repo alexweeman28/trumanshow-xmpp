@@ -4,16 +4,22 @@ A tool to generate network traffic in the form of XMPP messages exchanged among 
 
 ## Files
 
-* accounts/ -- This directory provides a collection of scripts and other files to support account creation of XMPP chat agents for the Python 3 version.
-* chatagent3.py -- The Python 3 ChatAgent class. Works well with Prosody servers. Note the requirements included in comments at the top of the file.
-* prosody.cfg.lua -- Example prosody config file.
-* testagent3.py -- The driver script for chatagent3.py. The Python 3 version spawns child processes (rather than threads) for the agents. This change was necessitated by the fact that the sleekxmpp client is itself threaded.
+**accounts/:** This directory provides a collection of scripts and other files to support account creation of XMPP chat agents.
+**chatagent3.py:** The ChatAgent class. Works well with Prosody servers.
+**prosody.cfg.lua:** A sample prosody config file.
+**testagent3.py:**The driver script for chatagent3.py. This script spawns child processes (rather than threads, as in the earlier Python 2 version) for the agents. This change from the earlier version was necessitated by the fact that the sleekxmpp library client is itself threaded.
 
-* python2_version/ -- This directory contains :
- * chatagent_home.py -- The Python 2 ChatAgent class. Works well with Prosody servers. Note the requirements included in comments at the top of the file.
- * testagent_home.py -- The driver script for chatagent_home.py.
- * buddylist.py -- This is a script to create rosters (buddy lists) for the Python 2 chat bots.
+## Installation
 
-Differences between Python 3 and Python 2 versions:
- * Agent 'armies' created with the Python3 sleekxmpp ClientXMPP class require a slow start. Otherwise, it appears the system (client library and/or the XMPP server) is overwhelmed by the administrative message traffic, with the result, for example, that agents don't get their rosters from the server in a timely fashion. Disaster follows. The current lag time between spawning agent processes was chosen arbitrarily and can likely be reduced, if necessary.
- * Agents that are disconnected by the server when their messages are not well-formed (XML-speak), are evidently automatically (and silently) re-connected and authenticated by the Python 3 ClientXMPP class. This is evident from the Prosody server logs. Therefore, the code in the Python 2 version that handled this task has been removed.
+The ChatAgent class (defined in chatagent3.py) requires Ubuntu 14.04 or later. Earlier versions do not appear to offer the required, up-to-date sleekxmpp library. It must also be noted that the sleekxmpp package included in Ubuntu 14.04 (python3-sleekxmpp is not sufficient (as of 8/2015), because it is not kept up to date with important changes.
+
+Follow these steps to install the latest version of the sleekxmpp library:
+```
+sudo apt-get update
+sudo apt-get install python3-pip  # also adds many dependencies
+sudo pip3 install sleekxmpp
+```
+In addition, the ChatAgent class requires the fortune-mod package:
+```
+sudo apt-get install fortune-mod
+```
