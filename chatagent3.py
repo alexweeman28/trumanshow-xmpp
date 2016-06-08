@@ -47,7 +47,7 @@ class ChatAgent(sleekxmpp.ClientXMPP):
         delay_min = options.getint('delay_min', defaults['delay_min'])
         delay_max = options.getint('delay_max', defaults['delay_max'])
     except Exception as e:
-        print('SQMail unable to read configuration from settings.ini: {}. Configuration set using hard-coded defaults.'.format(repr(e)))
+        print('ChatAgent unable to read configuration from settings.ini: {}. Configuration set using hard-coded defaults.'.format(repr(e)))
         send_prob = defaults['send_prob']
         delay_min = defaults['delay_min']
         delay_max = defaults['delay_max']
