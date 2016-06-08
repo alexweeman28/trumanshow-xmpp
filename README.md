@@ -12,6 +12,8 @@ A tool to generate network traffic in the form of XMPP messages exchanged among 
 
 **prosody.cfg.lua:** A sample prosody config file.
 
+**settings.ini:** Sample configuration file containing default settings to control the behavior of the ChatAgents.
+
 **testagent3.py:** The driver script for chatagent3.py. This script spawns child processes (rather than threads, as in the earlier, Python 2 version) for the agents. This change was necessitated by the fact that the sleekxmpp library client is itself threaded.
 
 ## Installation
