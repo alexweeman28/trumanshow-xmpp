@@ -21,7 +21,7 @@ This directory provides a collection of scripts and other files to support accou
 
 ## Installation
 
-The script chatbot.py``` requires the third-party sleekxmpp library. See the installation in ```README.md``` in the main directory for installation steps.
+The script ```chatbot.py``` requires the third-party sleekxmpp library. See the Installation section in ```README.md``` in the main directory for the steps required to install this library.
 
 ## Configuration and Use
 
