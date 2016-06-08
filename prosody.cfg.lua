@@ -8,9 +8,8 @@
 -- If there are any errors, it will let you know what and where
 -- they are, otherwise it will keep quiet.
 --
--- The only thing left to do is rename this file to remove the .dist ending, and fill in the
--- blanks. Good luck, and happy Jabbering!
-
+-- The only thing left to do is rename this file to remove the .dist ending, 
+-- and fill in the blanks. Good luck, and happy Jabbering!
 
 ---------- Server-wide settings ----------
 -- Settings in this section apply to the whole server and are the default settings
