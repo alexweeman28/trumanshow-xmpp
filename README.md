@@ -4,7 +4,7 @@ A tool to generate network traffic in the form of XMPP messages exchanged among 
 
 ## Files
 
-**accounts/:** This directory provides a collection of scripts and other files to support account creation of XMPP chat agents.
+**accounts/:** This directory provides a collection of scripts and other files to support account creation of XMPP chat agents. See README.md in the accounts folder for details.
 
 **READMD.md:** This file.
 
@@ -12,7 +12,7 @@ A tool to generate network traffic in the form of XMPP messages exchanged among 
 
 **prosody.cfg.lua:** A sample prosody config file.
 
-**testagent3.py:**The driver script for chatagent3.py. This script spawns child processes (rather than threads, as in the earlier Python 2 version) for the agents. This change from the earlier version was necessitated by the fact that the sleekxmpp library client is itself threaded.
+**testagent3.py:** The driver script for chatagent3.py. This script spawns child processes (rather than threads, as in the earlier, Python 2 version) for the agents. This change was necessitated by the fact that the sleekxmpp library client is itself threaded.
 
 ## Installation
 
