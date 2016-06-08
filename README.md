@@ -33,8 +33,8 @@ sudo apt-get install fortune-mod
 
 Prior to running this application, user accounts for virtual chat agents must be created on the XMPP servers among which chat traffic is to be exchanged. Scripts and other files needed to generate randomly-selected usernames and passwords, as well as creating accounts, are included in the accounts directory in this repository. See the README.md file in the accounts directory for details.
 
-Once the virtua chat accounts have been created, run the ```testagent3.py``` script to generate random XMPP traffic among the virtual chat agents:
+Once the virtual chat accounts have been created, run the ```testagent3.py``` script to generate random XMPP traffic among the virtual chat agents:
 ```
 python3 testchat3.py
 ```
-The configuration settings in the file settings.ini control the behavior of the user agents, specifically the probability of sending emails and the range of sleep times between rounds of activity.
+The configuration settings in the file settings.ini control the behavior of the user agents, specifically the probability of sending XMPP messages and the range of sleep times between rounds of activity.
