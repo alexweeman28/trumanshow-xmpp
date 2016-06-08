@@ -37,7 +37,6 @@ class ChatAgent(sleekxmpp.ClientXMPP):
     # These variables are used to pace the activity rate
     # of the agents and the probability that they'll actually
     # send a message when their scheduled turn comes up.
-    # On error, use these defaults.
     defaults = {"send_prob": 0.1, "delay_min": 30, "delay_max": 60}
     try:
         parser = ConfigParser()
@@ -46,6 +45,7 @@ class ChatAgent(sleekxmpp.ClientXMPP):
         send_prob = options.getfloat('send_prob', defaults['send_prob'])
         delay_min = options.getint('delay_min', defaults['delay_min'])
         delay_max = options.getint('delay_max', defaults['delay_max'])
+    # On error, use the defaults defined above.
     except Exception as e:
         print('ChatAgent unable to read configuration from settings.ini: {}. Configuration set using hard-coded defaults.'.format(repr(e)))
         send_prob = defaults['send_prob']
